@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "68989229381",
+    "project_id": "moon--post",
+    "storage_bucket": "moon--post.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68989229381:android:9249db832ea0403b0a062c",
+        "android_client_info": {
+          "package_name": "com.example.test_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68989229381-4nt16r7t9v7ahar8qp0lpi0672ovlql1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs4rw3KLNTWkSIcxZiRiUJBpsc78nrQ8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68989229381-4nt16r7t9v7ahar8qp0lpi0672ovlql1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
