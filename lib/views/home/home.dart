@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   ];
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  late User user;
+     User? user;
   bool isloggedin = false;
 
   checkAuthentification() async {
@@ -42,13 +42,30 @@ class _HomePageState extends State<HomePage> {
     User? firebaseUser = _auth.currentUser;
     await firebaseUser?.reload();
     firebaseUser = _auth.currentUser;
-    if (firebaseUser != null) {
+    if (firebaseUser != null){
+    
       setState(() {
         this.user = firebaseUser!;
         this.isloggedin = true;
       });
     }
   }
+
+  // getUser() async{
+  //   User? user =  _auth.currentUser;
+  //   await user?.reload();
+  //   user =  _auth.currentUser;
+
+  //   if(user !=null)
+  //   {
+  //     setState(() {
+  //       this.user = user!;
+  //       this.isloggedin=true;
+  //     });
+  //   }
+  // }
+
+  
 
   signOut() async {
     _auth.signOut();
@@ -117,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
                   child: Text(
-                    'Hello, ${user.displayName} ',
+                    'Hello, ${user?.displayName} ',
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w300,
