@@ -7,15 +7,14 @@ import 'package:test_2/views/manifest/home.dart';
 import 'package:test_2/views/more/home.dart';
 
 // end
-
-class qr_code extends StatefulWidget {
-  const qr_code({Key? key}) : super(key: key);
+class More_home extends StatefulWidget {
+  const More_home({Key? key}) : super(key: key);
 
   @override
-  _qr_codeState createState() => _qr_codeState();
+  _More_homeState createState() => _More_homeState();
 }
 
-class _qr_codeState extends State<qr_code> {
+class _More_homeState extends State<More_home> {
   int selectedIndex = 0;
 
   List screens = [HomePage(), Manifest_home(), Phanero_Home(), More_home()];
@@ -30,9 +29,8 @@ class _qr_codeState extends State<qr_code> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Qr Code'),
+        title: Text('Phanero '),
       ),
-      //bottom nav
       bottomNavigationBar: BottomMenu(
         selectedIndex: selectedIndex,
         onClicked: onClicked,

@@ -4,7 +4,14 @@ import 'package:slide_to_act/slide_to_act.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import './qr_code.dart';
 import '../home/start.dart';
+// global widget import
+import '../global_widgets/bottom_nav.dart';
+import 'package:test_2/views/phanero/home.dart';
+import 'package:test_2/views/manifest/home.dart';
+import 'package:test_2/views/more/home.dart';
 
+// end
+ 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -50,17 +57,13 @@ class _HomePageState extends State<HomePage> {
     // await googleSignIn.signOut();
   }
 
-  int _selectedIndex = 0;
+  int selectedIndex = 0;
 
-  @override
-  void initState() {
-    this.checkAuthentification();
-    this.getUser();
-  }
+  List screens = [HomePage(), Manifest_home(), Phanero_Home(), More_home()];
 
-  void _onItemTapped(int index) {
+  void onClicked(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
   }
 
@@ -101,6 +104,10 @@ class _HomePageState extends State<HomePage> {
       ),
 
       // work on bottom appbar
+      // bottomNavigationBar: BottomMenu(
+      //   selectedIndex: selectedIndex,
+      //   onClicked: onClicked,
+      // ),
 
       body: SingleChildScrollView(
         child: Container(
@@ -130,7 +137,6 @@ class _HomePageState extends State<HomePage> {
                         width: 200,
                         child: Column(
                           children: [
-                            // ask hoe to make this one text
                             Text(
                               'Manifest, Makindye.',
                               style: TextStyle(
@@ -154,15 +160,6 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               height: 10,
                             ),
-                            // Text('The Greek word Phaneroo is'),
-                            // Text(
-                            //     'translated as bringing to manifestation that which'),
-                            // Text(
-                            //     'existed but is not seen. Consequently, what we want to see in this '),
-                            // Text(
-                            //     'generation is that Christians start bringing'),
-                            // Text('forth things that men never thought '),
-                            // Text('existed yet they did in fact exist.'),
                           ],
                         ),
                       ),
@@ -283,7 +280,7 @@ class _HomePageState extends State<HomePage> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(14.0),
                 child: Image.asset(
-                  'assets/images/readdevotion.jpeg',
+                  'assets/images/devotion.jpeg',
                   width: 380,
                   height: 200,
                   fit: BoxFit.fill,
@@ -322,7 +319,7 @@ class _HomePageState extends State<HomePage> {
                           topLeft: Radius.circular(10.0),
                           bottomLeft: Radius.circular(10.0)),
                       child: Image.asset(
-                        'assets/images/readdevotion.jpeg',
+                        'assets/images/devotion.jpeg',
                         width: 80,
                         height: 80,
                         fit: BoxFit.fill,
@@ -367,7 +364,7 @@ class _HomePageState extends State<HomePage> {
                           topLeft: Radius.circular(10.0),
                           bottomLeft: Radius.circular(10.0)),
                       child: Image.asset(
-                        'assets/images/readdevotion.jpeg',
+                        'assets/images/devotion.jpeg',
                         width: 80,
                         height: 80,
                         fit: BoxFit.fill,
@@ -411,7 +408,7 @@ class _HomePageState extends State<HomePage> {
                           topLeft: Radius.circular(10.0),
                           bottomLeft: Radius.circular(10.0)),
                       child: Image.asset(
-                        'assets/images/readdevotion.jpeg',
+                        'assets/images/devotion.jpeg',
                         width: 80,
                         height: 80,
                         fit: BoxFit.fill,
@@ -448,30 +445,6 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-      ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.call_outlined),
-            label: 'Manifest',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'Phanero',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.more),
-            label: 'More',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
       ),
     );
   }
