@@ -104,10 +104,10 @@ class _HomePageState extends State<HomePage> {
       ),
 
       // work on bottom appbar
-      // bottomNavigationBar: BottomMenu(
-      //   selectedIndex: selectedIndex,
-      //   onClicked: onClicked,
-      // ),
+      bottomNavigationBar: BottomMenu(
+        selectedIndex: selectedIndex,
+        onClicked: onClicked,
+      ),
 
       body: SingleChildScrollView(
         child: Container(
