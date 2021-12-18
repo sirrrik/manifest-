@@ -11,22 +11,17 @@ import 'package:test_2/views/manifest/home.dart';
 import 'package:test_2/views/more/home.dart';
 
 // end
- 
+
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  // const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<String> imageList = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEwzz_J4yJzx_EgpEKmiYtGDh4CDib6z4XNw&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHSbjfpWvKeo3OP0ZQimu-lkh7hif2UIG06Q&usqp=CAU"
-  ];
-
   final FirebaseAuth _auth = FirebaseAuth.instance;
-     User? user;
+  late User user;
   bool isloggedin = false;
 
   checkAuthentification() async {
@@ -42,8 +37,7 @@ class _HomePageState extends State<HomePage> {
     User? firebaseUser = _auth.currentUser;
     await firebaseUser?.reload();
     firebaseUser = _auth.currentUser;
-    if (firebaseUser != null){
-    
+    if (firebaseUser != null) {
       setState(() {
         this.user = firebaseUser!;
         this.isloggedin = true;
@@ -51,28 +45,23 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  // getUser() async{
-  //   User? user =  _auth.currentUser;
-  //   await user?.reload();
-  //   user =  _auth.currentUser;
-
-  //   if(user !=null)
-  //   {
-  //     setState(() {
-  //       this.user = user!;
-  //       this.isloggedin=true;
-  //     });
-  //   }
-  // }
-
-  
-
   signOut() async {
     _auth.signOut();
 
     // final googleSignIn = GoogleSignIn();
     // await googleSignIn.signOut();
   }
+
+  @override
+  void initState() {
+    this.checkAuthentification();
+    this.getUser();
+  }
+
+  final List<String> imageList = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEwzz_J4yJzx_EgpEKmiYtGDh4CDib6z4XNw&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHSbjfpWvKeo3OP0ZQimu-lkh7hif2UIG06Q&usqp=CAU"
+  ];
 
   int selectedIndex = 0;
 
@@ -134,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
                   child: Text(
-                    'Hello, ${user?.displayName} ',
+                    'Hello, ${user.displayName} ',
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w300,
@@ -149,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   child: Row(children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(6.0),
                       child: SizedBox(
                         width: 200,
                         child: Column(
@@ -193,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(14.0),
                               child: Image.asset(
                                 'assets/images/p.jpeg',
-                                width: 100,
+                                width: 95,
                                 height: 250,
                                 fit: BoxFit.fill,
                               ),
@@ -309,7 +298,7 @@ class _HomePageState extends State<HomePage> {
 
               // read devotion button
               SizedBox(
-                width: 380,
+                width: 350,
                 child: ElevatedButton(
                     onPressed: () {},
                     child: Text(
@@ -343,7 +332,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(
-                      width: 300,
+                      width: 295,
                       height: 80,
                       child: Container(
                         decoration: BoxDecoration(
@@ -358,7 +347,7 @@ class _HomePageState extends State<HomePage> {
                               color: Color(0xff979797),
                               fontWeight: FontWeight.w300,
                               fontSize: 30.0,
-                              letterSpacing: 2,
+                              letterSpacing: 1,
                             ),
                           ),
                         ),
@@ -388,7 +377,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(
-                      width: 300,
+                      width: 295,
                       height: 80,
                       child: Container(
                         decoration: BoxDecoration(
@@ -432,7 +421,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(
-                      width: 300,
+                      width: 295,
                       height: 80,
                       child: Container(
                         decoration: BoxDecoration(

@@ -15,6 +15,7 @@ class qr_code extends StatefulWidget {
   _qr_codeState createState() => _qr_codeState();
 }
 
+// ignore: camel_case_types
 class _qr_codeState extends State<qr_code> {
   int selectedIndex = 0;
 
