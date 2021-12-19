@@ -7,16 +7,16 @@ class ManifestAppTheme {
   static const Color background = Color(0xFFF2F3F8);
   static const Color nearlyDarkBlue = Color(0xFF2633C5);
 
-  static const Color textBG = Color(0xFFBED8CF);
+  static const Color textBG = Color(0xFFFDFAFA);
   static const Color strongButton = Color(0xFFED6F00);
-  static const Color lightButton = Color(0xFFFCCEBE);
+  static const Color lightButton = Color(0xFFF8A55A);
   static const Color widgetBG = Color(0xFFfbe7d3);
 
   static const Color darkText = Color.fromARGB(255, 11, 32, 41);
   static const Color darkerText = Color.fromARGB(255, 1, 23, 29);
   static const Color lightText = Color.fromARGB(255, 188, 198, 202);
   static const Color spacer = Color(0xFFF2F2F2);
-  static const String fontName = 'Roboto';
+  static const String fontName = 'Poppins';
 
   static const TextTheme textTheme = TextTheme(
     headline4: mainHeadline,
