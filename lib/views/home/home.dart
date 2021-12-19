@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:test_2/views/theme/theme.dart';
 import './qr_code.dart';
 import '../home/start.dart';
 // global widget import
@@ -229,6 +230,7 @@ class _HomePageState extends State<HomePage> {
                       .toList(),
                 ],
               ),
+              // slider
 
               Builder(builder: (context) {
                 decoration:
@@ -245,12 +247,14 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(8.0),
                   child: SlideAction(
                       text: 'Slide to QR Code',
+                      textStyle: ManifestAppTheme.btText,
+                    
                       alignment: Alignment.bottomCenter,
-                      innerColor: Colors.black,
-                      outerColor: Color(0xffF8A55A),
+                      innerColor: ManifestAppTheme.lightButton,
+                      outerColor: ManifestAppTheme.strongButton,
                       sliderButtonIcon: Icon(
                         Icons.arrow_forward,
-                        color: Colors.white,
+                        color: ManifestAppTheme.white,
                       ),
                       submittedIcon: Icon(Icons.done),
                       animationDuration: Duration(seconds: 1),
@@ -260,7 +264,7 @@ class _HomePageState extends State<HomePage> {
                           context,
                           MaterialPageRoute(builder: (context) => qr_code()),
                         );
-                        Future.delayed(Duration(milliseconds: 700),
+                        Future.delayed(Duration(milliseconds: 300),
                             () => _Key.currentState!.reset());
                       }),
                 );
@@ -275,9 +279,10 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   'Devotion',
                   style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 28.0,
+                    fontFamily: ManifestAppTheme.fontName,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    letterSpacing: 0.27,
                   ),
                   textAlign: TextAlign.left,
                 ),
@@ -298,16 +303,17 @@ class _HomePageState extends State<HomePage> {
 
               // read devotion button
               SizedBox(
-                width: 350,
+                width: 380,
                 child: ElevatedButton(
                     onPressed: () {},
                     child: Text(
                       'Click to read devotion',
                       style: TextStyle(
-                        color: Colors.black,
+                        fontFamily: ManifestAppTheme.fontName,
+                        color: ManifestAppTheme.darkText,
                         fontWeight: FontWeight.w300,
-                        fontSize: 28.0,
-                        letterSpacing: 2,
+                        fontSize: 16,
+                        letterSpacing: 0.18,
                       ),
                     )),
               ),
@@ -344,10 +350,11 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                             'The faith series',
                             style: TextStyle(
-                              color: Color(0xff979797),
+                              fontFamily: ManifestAppTheme.fontName,
+                              color: ManifestAppTheme.darkText,
                               fontWeight: FontWeight.w300,
-                              fontSize: 30.0,
-                              letterSpacing: 1,
+                              fontSize: 16,
+                              letterSpacing: 0.18,
                             ),
                           ),
                         ),
@@ -389,10 +396,11 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                             'Money',
                             style: TextStyle(
-                              color: Color(0xff979797),
+                              fontFamily: ManifestAppTheme.fontName,
+                              color: ManifestAppTheme.darkText,
                               fontWeight: FontWeight.w300,
-                              fontSize: 30.0,
-                              letterSpacing: 2,
+                              fontSize: 16,
+                              letterSpacing: 0.18,
                             ),
                           ),
                         ),
@@ -433,10 +441,11 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                             'Submition',
                             style: TextStyle(
-                              color: Color(0xff979797),
+                              fontFamily: ManifestAppTheme.fontName,
+                              color: ManifestAppTheme.darkText,
                               fontWeight: FontWeight.w300,
-                              fontSize: 30.0,
-                              letterSpacing: 2,
+                              fontSize: 16,
+                              letterSpacing: 0.18,
                             ),
                           ),
                         ),
