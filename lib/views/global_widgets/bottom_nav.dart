@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../theme/theme.dart';
+
 class BottomMenu extends StatelessWidget {
   final selectedIndex;
   ValueChanged<int> onClicked;
@@ -10,6 +12,9 @@ class BottomMenu extends StatelessWidget {
     return BottomNavigationBar(
       items: [
         BottomNavigationBarItem(
+          //  icon: SvgPicture.asset(IMAGE_ASSETS_ICONS_ORDER_HISTORY, ) ,
+          //   activeIcon: SvgPicture.asset(IMAGE_ASSETS_ICONS_ORDER_HISTORY, color: Theme.of(context).accentColor ) ,
+          //   label: 'Order History',
           icon: Icon(Icons.home),
           label: 'Home',
         ),
@@ -28,9 +33,8 @@ class BottomMenu extends StatelessWidget {
       ],
       currentIndex: selectedIndex,
       onTap: onClicked,
-      selectedItemColor: Colors.red[800],
-      backgroundColor: Colors.black,
-      unselectedItemColor: Color.fromARGB(255, 55, 143, 44),
+      backgroundColor: ManifestAppTheme.textBG,
+      unselectedItemColor: ManifestAppTheme.darkText,
     );
   }
 }

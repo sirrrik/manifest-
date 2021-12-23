@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:test_2/views/home/home.dart';
-import 'package:test_2/views/home/start.dart';
+import 'package:Manifest/views/home/home.dart';
+import 'package:Manifest/views/home/start.dart';
 
 
 void main() async {

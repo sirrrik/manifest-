@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:test_2/views/theme/theme.dart';
+import 'package:Manifest/views/theme/theme.dart';
 import '../global_widgets/app_bar.dart';
 import './qr_code.dart';
 import '../home/start.dart';
 // global widget import
 import '../global_widgets/bottom_nav.dart';
-import 'package:test_2/views/phanero/home.dart';
-import 'package:test_2/views/manifest/home.dart';
-import 'package:test_2/views/more/home.dart';
+import 'package:Manifest/views/phanero/home.dart';
+import 'package:Manifest/views/manifest/home.dart';
+import 'package:Manifest/views/more/home.dart';
 
 // end
 
@@ -98,6 +98,7 @@ class _HomePageState extends State<HomePage> {
 
       body: SingleChildScrollView(
         child: Column(
+      //  screens.elementAt(selectedIndex),
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),

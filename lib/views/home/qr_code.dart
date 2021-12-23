@@ -1,14 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:test_2/views/theme/theme.dart';
+import 'package:Manifest/views/theme/theme.dart';
 // global widget import
 import '../global_widgets/app_bar.dart';
 import '../global_widgets/bottom_nav.dart';
 import '../home/home.dart';
-import 'package:test_2/views/phanero/home.dart';
-import 'package:test_2/views/manifest/home.dart';
-import 'package:test_2/views/more/home.dart';
+import 'package:Manifest/views/phanero/home.dart';
+import 'package:Manifest/views/manifest/home.dart';
+import 'package:Manifest/views/more/home.dart';
 
 // end
 

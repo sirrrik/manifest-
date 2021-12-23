@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 // global widget import
 import '../global_widgets/bottom_nav.dart';
 import '../home/home.dart';
-import 'package:test_2/views/phanero/home.dart';
-import 'package:test_2/views/manifest/home.dart';
-import 'package:test_2/views/more/home.dart';
+import 'package:Manifest/views/phanero/home.dart';
+import 'package:Manifest/views/manifest/home.dart';
+import 'package:Manifest/views/more/home.dart';
 
 // end
 
